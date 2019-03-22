@@ -1,0 +1,53 @@
+/*---------------------------------------------------------------
+ * PROFILE INFORMATION:
+ *
+ * DESCRIPTION:
+ *
+ *   BattleShip Game
+ *
+ * VERSION:
+ *
+ *   1.0
+ *
+ * AUTHOR:
+ *
+ *   David Boudah
+ *
+ * OBJECT MODIFICATION DATE:
+ *
+ *   Sun May 19 10:02:28 1996
+ *
+ *--------------------------------------------------------------*/
+#ifndef _BATTLE_RCH
+#define _BATTLE_RCH
+
+#define STR_BATTLEAPP_NAME              10000
+#define STR_VALIDATION_ERROR            10001
+#define STR_VALIDATION_TITLE            10002
+#define STR_REQUIRED_ERROR              10003
+#define MI_BATTLEAPP_HELP               5000
+#define MI_HELP_CONTENTS                5001
+#define MI_BATTLEAPP_HELP_PRODINFO      5002
+#define WND_BATTLEWIN                   1000
+#define MI_BATTLEWIN_GAME               5003
+#define MI_BATTLEWIN_GAME_NEW           5004
+#define MI_BATTLEWIN_GAME_END_GAME      5005
+#define MI_BATTLEWIN_GAME_EXIT          5007
+#define MI_BATTLEWIN_OPTIONS            5008
+#define MI_HELP_ABOUT                   5009
+
+// Help system constant values
+#define HLP_BATTLEAPP                   10000
+#define HLP_BATTLEWIN                   10001
+#define HLP_BATTLEWIN_GAME              10002
+#define HLP_BATTLEWIN_GAME_NEW          10003
+#define HLP_BATTLEWIN_GAME_END_GAME     10004
+#define HLP_BATTLEWIN_GAME_ENTER_NAME   10005
+#define HLP_BATTLEWIN_GAME_EXIT         10006
+#define HLP_BATTLEWIN_OPTIONS           10007
+#define HLP_BATTLEWIN_OPTIONS_SOUND     10008
+#define HLP_BATTLEWIN_OPTIONS_TURNS_PER_ROUND 10009
+#define HLP_BATTLEWIN_OPTIONS_LAY_MINES 10010
+#define HLP_BATTLEWIN_OPTIONS_SMART_OPPONENT 10011
+  
+#endif // _BATTLE_RCH

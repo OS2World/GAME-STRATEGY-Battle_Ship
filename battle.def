@@ -1,0 +1,10 @@
+; battle.def:
+;
+; Module definition file for PMSAF
+NAME            BATTLE WINDOWAPI
+STUB            'OS2STUB.EXE'
+DESCRIPTION     ''
+CODE            PRELOAD MOVEABLE
+DATA            LOADONCALL MOVEABLE MULTIPLE READWRITE
+HEAPSIZE        4096
+STACKSIZE       16384

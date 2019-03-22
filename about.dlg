@@ -1,0 +1,24 @@
+DLGTEMPLATE dlg_about LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "About Battleship", dlg_about, 119, 21, 191, 82, NOT 
+            FS_DLGBORDER | FS_SIZEBORDER | WS_VISIBLE | WS_SYNCPAINT, 
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        ICON            WND_BATTLEWIN, 400, 3, 54, 36, 28, WS_GROUP
+        CTEXT           "Battleship Game", st_title, 38, 63, 110, 16, 
+                        DT_VCENTER | NOT WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "18.Times New Roman"
+        CTEXT           "Version 1.0", st_version, 65, 54, 57, 10, 
+                        DT_VCENTER | NOT WS_GROUP
+        CTEXT           "Bou Software Systems 1996", st_company, 19, 40, 155, 
+                        10, DT_VCENTER | NOT WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CTEXT           "David Boudah", st_name, 50, 29, 92, 10, DT_VCENTER | 
+                        NOT WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CTEXT           "All rights reserved", st_reserved, 49, 22, 94, 9, 
+                        DT_VCENTER | NOT WS_GROUP
+                        PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        DEFPUSHBUTTON   "~Ok", DID_OK, 76, 2, 40, 14
+    END
+END

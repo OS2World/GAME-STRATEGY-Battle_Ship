@@ -1,0 +1,112 @@
+#include <os2.h>      /* for PM constants */
+#include "battle.h"
+#include "about.h"
+
+//*************************************************************
+//  BattleWin Menu Template
+//*************************************************************
+MENU WND_BATTLEWIN
+{
+  SUBMENU  "~Game", MI_BATTLEWIN_GAME, MIS_TEXT
+  {
+    MENUITEM "~New\tCtrl+N", MI_BATTLEWIN_GAME_NEW, MIS_TEXT
+    MENUITEM "~End game\tCtrl+E", MI_BATTLEWIN_GAME_END_GAME, MIS_TEXT
+    MENUITEM SEPARATOR
+    MENUITEM "~Options...\tCtrl+O", MI_BATTLEWIN_OPTIONS, MIS_TEXT
+    MENUITEM SEPARATOR
+    MENUITEM "E~xit\tF3", MI_BATTLEWIN_GAME_EXIT, MIS_TEXT
+  }
+  SUBMENU "~Help", MI_BATTLEAPP_HELP, MIS_TEXT
+  {
+    MENUITEM "~Contents\tF1", MI_HELP_CONTENTS, MIS_TEXT
+    MENUITEM SEPARATOR
+    MENUITEM "~About...", MI_HELP_ABOUT, MIS_TEXT
+  }
+}
+
+//*************************************************************
+//  BattleWin Accelerator table
+//*************************************************************
+ACCELTABLE WND_BATTLEWIN
+BEGIN
+   "N", MI_BATTLEWIN_GAME_NEW, CONTROL
+   "n", MI_BATTLEWIN_GAME_NEW, CONTROL
+   "E", MI_BATTLEWIN_GAME_END_GAME, CONTROL
+   "e", MI_BATTLEWIN_GAME_END_GAME, CONTROL
+   "O", MI_BATTLEWIN_OPTIONS, CONTROL
+   "o", MI_BATTLEWIN_OPTIONS, CONTROL
+   VK_F1, MI_HELP_CONTENTS, VIRTUALKEY
+   VK_F3, MI_BATTLEWIN_GAME_EXIT, VIRTUALKEY
+END
+
+STRINGTABLE LOADONCALL
+BEGIN
+    STR_BATTLEAPP_NAME,                 "BATTLE" 
+    STR_VALIDATION_ERROR,               "This window cannot be accepted with invalid data.
+             Correct the data so that the window may be accepted, or cancel to ignore changes."
+    STR_VALIDATION_TITLE,               "Invalid Data"
+    STR_REQUIRED_ERROR,                 "Required field not completed."
+    WND_BATTLEWIN,                          " "
+END
+
+
+HELPTABLE HLP_BATTLEAPP
+BEGIN
+    // Window ID            Sub Table ID         IPF Extended Help ID
+    HELPITEM WND_BATTLEWIN, HLP_BATTLEWIN, HLP_BATTLEWIN
+END
+
+HELPSUBTABLE HLP_BATTLEWIN
+BEGIN
+    HELPSUBITEM MI_BATTLEWIN_GAME,          HLP_BATTLEWIN_GAME
+    HELPSUBITEM MI_BATTLEWIN_GAME_NEW,      HLP_BATTLEWIN_GAME_NEW
+    HELPSUBITEM MI_BATTLEWIN_GAME_END_GAME, HLP_BATTLEWIN_GAME_END_GAME
+    HELPSUBITEM MI_BATTLEWIN_GAME_EXIT,     HLP_BATTLEWIN_GAME_EXIT
+    HELPSUBITEM MI_BATTLEWIN_OPTIONS,       HLP_BATTLEWIN_OPTIONS
+END
+
+
+//**************************************************************************
+// icon and Bitmap resources
+//  Symbolic Name (ID) <-> icon filename
+//**************************************************************************
+/////////////////////////////////////////////////////////////////////////////
+// Miscellaneous Bitmaps
+//
+
+BITMAP      WATER       LOADONCALL  "WATER.BMP"
+BITMAP      MINE        LOADONCALL  "MINE.BMP"
+BITMAP      MINEEXPL    LOADONCALL  "MINEEXPL.BMP"
+BITMAP      HITMARK     LOADONCALL  "HIT.BMP"
+BITMAP      BLANK       LOADONCALL  "BLANK.BMP"
+BITMAP      SELBUTN     LOADONCALL  "SELBUTN.BMP"
+BITMAP      RIGHTARROW  LOADONCALL  "RTARROW.BMP"
+BITMAP      LEFTARROW   LOADONCALL  "LFARROW.BMP"
+BITMAP      UPARROW     LOADONCALL  "UPARROW.BMP"
+BITMAP      DOWNARROW   LOADONCALL  "DNARROW.BMP"
+BITMAP      BATTLESHIP  LOADONCALL  "BISMARCK.BMP"
+/////////////////////////////////////////////////////////////////////////////
+// Horizontal bitmaps for ships
+//
+BITMAP      HBATTLE     LOADONCALL  "HBATTLE.BMP"
+BITMAP      HCARRIER    LOADONCALL  "HCARRIER.BMP"
+BITMAP      HDESTROY    LOADONCALL  "HDESTROY.BMP"
+BITMAP      HSUB        LOADONCALL  "HSUB.BMP"
+BITMAP      HPTBOAT     LOADONCALL  "HPTBOAT.BMP"
+// Vertical bitmaps for ships
+//
+BITMAP      VBATTLE     LOADONCALL  "VBATTLE.BMP"
+BITMAP      VCARRIER    LOADONCALL  "VCARRIER.BMP"
+BITMAP      VDESTROY    LOADONCALL  "VDESTROY.BMP"
+BITMAP      VSUB        LOADONCALL  "VSUB.BMP"                       
+BITMAP      VPTBOAT     LOADONCALL  "VPTBOAT.BMP"
+
+ICON        WND_BATTLEWIN            CAT.ICO
+/////////////////////////////////////////////////////////////////////////////
+// Sounds
+//
+//IDSOUND_FIRE          sound       fire.wav
+//IDSOUND_EXPLOSION    sound       explosio.wav
+//IDSOUND_PLAYERHIT    sound       xplode1.wav
+
+rcinclude about.dlg  
