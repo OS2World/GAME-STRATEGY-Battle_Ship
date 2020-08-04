@@ -6,6 +6,8 @@ Battle Ship for OS/2.
 
 ## COMPILE TOOLS
 * C ++
+* ICC
+* RC
  
 ## AUTHORS
 * David Boudah
